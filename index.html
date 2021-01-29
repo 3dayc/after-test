@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .a-box{width:100px; height:50px; background-color:yellow;}
+        .b-box{width:100px; height:50px; background-color:green;}
+        .a2{color:red}
+        .a3{color:thistle}
+        .a4{color:aqua}
+        .b-box::after{content:"test";}
+        .b-box.a2::after{background-color:red}
+        .b-box.a3::after{background-color:thistle}
+        .b-box.a4::after{background-color:aqua}
+    </style>
+</head>
+<body>
+    <div class="a-box">
+        <!-- a2, a3, a4 넣다 뺐다 시 변경 확인 -->
+        <div class="a a4">
+            안녕
+        </div>
+    </div>
+    <div class="b-box">
+        색상변경
+    </div>
+    <script>
+        var a = document.querySelector(".a");
+        var bBox = document.querySelector(".b-box")
+        if(a.classList.contains("a2")){
+            bBox.classList.add("a2")
+        } else if(a.classList.contains("a3")){
+            bBox.classList.add("a3")
+        } else if(a.classList.contains("a4")){
+            bBox.classList.add("a4")
+        }
+    </script>
+</body>
+</html>
+
